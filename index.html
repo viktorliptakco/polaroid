@@ -5,10 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Damion&display=swap" rel="stylesheet">
     <title>Polaroid</title>
 </head>
 <body>
-    <div class="polaroid">
+
+    <div id="welcome">
+        <h1>Krásneho Valentína</h1>
+        <button class="noselect">Click me</button>
+    </div>
+
+    <div id="camera" class="polaroid hidden">
         <div class="button"></div>
             <div class="polaroid-body-bottom">
                 <div class="slot"></div>
@@ -32,27 +39,38 @@
     </div>
 
     <script>
-        const images = [  'img/img1.jpg',
-                          'img/img2.jpg',
-                          'img/img3.jpg',
-                          'img/img4.jpg',
-                          'img/img5.jpg',
-                          'img/img6.jpg',
-                          'img/img7.jpg',
-                          'img/img8.jpg',
-                          'img/img9.jpg'];
+        const welcome = document.getElementById("welcome");
+        const camera = document.getElementById("camera");
 
-        let currentImage = 0;
+        welcome.addEventListener("click", function() {
+            welcome.style.display = "none";
+            camera.style.display = "block";
 
-        function changeImage() {
-        const imageElements = document.getElementsByClassName('image');
-        for (let i = 0; i < imageElements.length; i++) {
-            imageElements[i].src = images[currentImage];
-        }
-        currentImage = (currentImage + 1) % images.length;
-        }
+            const images = [    'img/img1.jpg',
+                                'img/img2.jpg',
+                                'img/img3.jpg',
+                                'img/img4.jpg',
+                                'img/img5.jpg',
+                                'img/img6.jpg',
+                                'img/img7.jpg',
+                                'img/img8.jpg',
+                                'img/img9.jpg'];
 
-        setInterval(changeImage, 5000);
+            let currentImage = 0;
+
+            function changeImage() {
+            const imageElements = document.getElementsByClassName('image');
+            for (let i = 0; i < imageElements.length; i++) {
+                imageElements[i].src = images[currentImage];
+            }
+            currentImage = (currentImage + 1) % images.length;
+            }
+
+            setInterval(changeImage, 5000);
+        });
+        
+
+
     </script>
 </body>
 </html>
