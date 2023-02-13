@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Polaroid</title>
+</head>
+<body>
+    <div class="polaroid">
+        <div class="button"></div>
+            <div class="polaroid-body-bottom">
+                <div class="slot"></div>
+                <div class="picture">
+                    <div class="frame">
+                        <img class="image" src="img/img3.jpg">
+                        <!--<img class="image" src="img/img2.jpg">
+                        <img class="image" src="img/img3.jpg">
+                        <img class="image" src="img/img4.jpg">
+                        <img class="image" src="img/img5.jpg">
+                        <img class="image" src="img/img6.jpg">
+                        <img class="image" src="img/img7.jpg">
+                        <img class="image" src="img/img8.jpg">
+                        <img class="image" src="img/img9.jpg"> 
+                         <div class="face">
+                           <div class="mouth">
+                                <div class="tongue"></div>
+                            </div>
+                            <div class="eyes">
+                                <div class="left-eye"></div>
+                                <div class="right-eye"></div>
+                            </div>
+                        </div>-->
+                    </div>
+                </div>
+            </div>
+        <div class="polaroid-body-top">
+            <div class="lens"></div>
+            <div class="lens-reflections"></div>
+            <div class="blinker"></div>
+            <div class="thingy"></div>
+            <div class="flash">
+            <div class="flash-reflections"></div>
+            </div>
+            <div class="stripes"></div>
+        </div>
+        <div class="divider"></div>
+    </div>
+
+    <script>
+        const images = [  'img/img1.jpg',
+                          'img/img2.jpg',
+                          'img/img3.jpg',
+                          'img/img4.jpg',
+                          'img/img5.jpg',
+                          'img/img6.jpg',
+                          'img/img7.jpg',
+                          'img/img8.jpg',
+                          'img/img9.jpg'];
+
+        let currentImage = 0;
+
+        function changeImage() {
+        const imageElements = document.getElementsByClassName('image');
+        for (let i = 0; i < imageElements.length; i++) {
+            imageElements[i].src = images[currentImage];
+        }
+        currentImage = (currentImage + 1) % images.length;
+        }
+
+        setInterval(changeImage, 5000);
+    </script>
+</body>
+</html>
