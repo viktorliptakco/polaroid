@@ -394,6 +394,9 @@ html {
   justify-content: center;
   top: 30%;
 }
+#welcome h1 {
+  font-weight: 400;
+}
 
 .noselect {
   -webkit-touch-callout: none;

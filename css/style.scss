@@ -413,6 +413,9 @@ html {
     display: flex;
     justify-content: center;
     top: 30%;
+    & h1 {
+        font-weight: 400;
+    }
 }
 
 .noselect {
